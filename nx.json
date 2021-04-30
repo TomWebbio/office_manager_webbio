@@ -1,33 +1,23 @@
 {
   "implicitDependencies": {
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     ".eslintrc.json": "*"
   },
-  "affected": {
-    "defaultBase": "master"
-  },
+  "affected": { "defaultBase": "master" },
   "npmScope": "office-manager-webbio",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
-      }
+      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
     }
   },
   "projects": {
-    "office-manager-server": {
-      "tags": []
-    },
-    "office-manager-client": {
-      "tags": []
-    },
+    "office-manager-server": { "tags": [] },
+    "office-manager-client": { "tags": [] },
     "office-manager-client-e2e": {
       "tags": [],
       "implicitDependencies": ["office-manager-client"]
-    }
+    },
+    "shared": { "tags": [] }
   }
 }
