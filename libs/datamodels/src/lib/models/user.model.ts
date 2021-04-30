@@ -1,5 +1,6 @@
 import { Registration } from './registration.model';
 import { Field, ObjectType, HideField, ID } from '@nestjs/graphql';
+
 @ObjectType()
 export class User {
   @Field((type) => ID)

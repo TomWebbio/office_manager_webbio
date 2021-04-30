@@ -1,6 +1,6 @@
 import { UserService } from './user.service';
-import { Parent, Query, Resolver } from '@nestjs/graphql';
-import { User } from '../../models/user.model';
+import { Query, Resolver } from '@nestjs/graphql';
+import { User } from '@office-manager-webbio/datamodels';
 
 @Resolver(User)
 export class UserResolver {
