@@ -3,6 +3,6 @@ module.exports = {
     '<rootDir>/apps/office-manager-server',
     '<rootDir>/apps/office-manager-client',
     '<rootDir>/libs/shared',
-    '<rootDir>/libs/datamodels',
+    '<rootDir>/libs/data-models',
   ],
 };

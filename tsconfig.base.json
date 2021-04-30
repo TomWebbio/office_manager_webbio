@@ -16,7 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@office-manager-webbio/shared": ["libs/shared/src/index.ts"],
-      "@office-manager-webbio/datamodels": ["libs/datamodels/src/index.ts"]
+      "@office-manager-webbio/data-models": ["libs/data-models/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,6 +1,6 @@
 import { UserService } from './user.service';
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
-import { CreateUser, User } from '@office-manager-webbio/datamodels';
+import { CreateUser, User } from '@office-manager-webbio/data-models';
 
 @Resolver(User)
 export class UserResolver {
