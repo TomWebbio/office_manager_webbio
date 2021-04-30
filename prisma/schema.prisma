@@ -11,8 +11,16 @@ generator client {
 }
 
 model User {
-  id       Int    @id @default(autoincrement())
-  email    String @unique
-  password String
-  name     String
+  id        Int    @id @default(autoincrement())
+  email     String @unique
+  password  String
+  firstName String
+  lastName  String
+  teams     Team[]
+}
+
+model Team {
+  id     Int   @id @default(autoincrement())
+  User   User? @relation(fields: [userId], references: [id])
+  userId Int?
 }
