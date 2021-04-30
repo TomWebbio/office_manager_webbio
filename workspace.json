@@ -74,7 +74,8 @@
           "executor": "@nrwl/next:server",
           "options": {
             "buildTarget": "office-manager-client:build",
-            "dev": true
+            "dev": true,
+            "proxyConfig": "apps/office-manager-client/proxy.conf.json"
           },
           "configurations": {
             "production": {
