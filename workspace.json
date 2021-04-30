@@ -19,7 +19,8 @@
             "outputPath": "dist/apps/office-manager-server",
             "main": "apps/office-manager-server/src/main.ts",
             "tsConfig": "apps/office-manager-server/tsconfig.app.json",
-            "assets": ["apps/office-manager-server/src/assets"]
+            "assets": ["apps/office-manager-server/src/assets"],
+            "webpackConfig": "apps/office-manager-server/webpack.config.js"
           },
           "configurations": {
             "production": {
@@ -144,6 +145,25 @@
           "outputs": ["coverage/libs/shared"],
           "options": {
             "jestConfig": "libs/shared/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "datamodels": {
+      "root": "libs/datamodels",
+      "sourceRoot": "libs/datamodels/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": { "lintFilePatterns": ["libs/datamodels/**/*.ts"] }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/datamodels"],
+          "options": {
+            "jestConfig": "libs/datamodels/jest.config.js",
             "passWithNoTests": true
           }
         }

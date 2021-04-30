@@ -18,6 +18,7 @@
       "tags": [],
       "implicitDependencies": ["office-manager-client"]
     },
-    "shared": { "tags": [] }
+    "shared": { "tags": [] },
+    "datamodels": { "tags": [] }
   }
 }

@@ -1,3 +1,4 @@
+import { UserResolver } from './modules/user/user.resolver';
 /**
  * This is not a production server yet!
  * This is only a minimal backend to get started.
@@ -5,11 +6,16 @@
 
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
+import { GraphQLSchemaFactory } from '@nestjs/graphql';
 
 import { AppModule } from './app/app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+
+  // const gqlSchemaFactory = app.get(GraphQLSchemaFactory);
+  // const schema = await gqlSchemaFactory.create([UserResolver]);
+
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
   const port = process.env.PORT || 3333;

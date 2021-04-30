@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@office-manager-webbio/shared": ["libs/shared/src/index.ts"]
+      "@office-manager-webbio/shared": ["libs/shared/src/index.ts"],
+      "@office-manager-webbio/datamodels": ["libs/datamodels/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
