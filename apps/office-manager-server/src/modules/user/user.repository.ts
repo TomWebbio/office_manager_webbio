@@ -6,6 +6,12 @@ export class UserRepository {
   constructor(private readonly prisma: PrismaService) {}
 
   findAll() {
-    return this.prisma.user.findMany();
+    return this.prisma.user.findMany({
+      select: {
+        email: true,
+        name: true,
+        id: true,
+      },
+    });
   }
 }
