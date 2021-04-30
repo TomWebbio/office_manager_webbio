@@ -1,23 +1,34 @@
 import { Registration } from './registration.model';
-import { Field, ObjectType, HideField, ID } from '@nestjs/graphql';
+import {
+  Field,
+  ObjectType,
+  HideField,
+  ID,
+  InputType,
+  PickType,
+} from '@nestjs/graphql';
 
 @ObjectType()
 export class User {
   @Field((type) => ID)
   id: number;
 
-  @Field()
   email: string;
 
   @HideField()
   password: string;
 
-  @Field()
   firstName: string;
 
-  @Field()
   lastName: string;
 
   @Field((type) => [Registration])
   registrations: Registration[];
 }
+
+@InputType()
+export class CreateUser extends PickType(
+  User,
+  ['email', 'firstName', 'lastName', 'password'] as const,
+  InputType
+) {}
