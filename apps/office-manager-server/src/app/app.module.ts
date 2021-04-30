@@ -7,7 +7,10 @@ import { join } from 'path';
   imports: [
     GraphQLModule.forRoot({
       playground: true,
-      autoSchemaFile: '../../schema.gql',
+      autoSchemaFile: join(
+        process.cwd(),
+        'apps/office-manager-server/schema.gql'
+      ),
     }),
     UserModule,
   ],
