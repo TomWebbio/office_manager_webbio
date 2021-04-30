@@ -21,6 +21,13 @@
   "projects": {
     "office-manager-server": {
       "tags": []
+    },
+    "office-manager-client": {
+      "tags": []
+    },
+    "office-manager-client-e2e": {
+      "tags": [],
+      "implicitDependencies": ["office-manager-client"]
     }
   }
 }
