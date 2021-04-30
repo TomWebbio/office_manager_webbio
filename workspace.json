@@ -1,0 +1,59 @@
+{
+  "version": 2,
+  "cli": {
+    "defaultCollection": "@nrwl/nest"
+  },
+  "defaultProject": "office-manager-server",
+  "projects": {
+    "office-manager-server": {
+      "root": "apps/office-manager-server",
+      "sourceRoot": "apps\\office-manager-server\\src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/office-manager-server",
+            "main": "apps/office-manager-server/src/main.ts",
+            "tsConfig": "apps/office-manager-server/tsconfig.app.json",
+            "assets": ["apps/office-manager-server/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/office-manager-server/src/environments/environment.ts",
+                  "with": "apps/office-manager-server/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "office-manager-server:build"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/office-manager-server/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/office-manager-server"],
+          "options": {
+            "jestConfig": "apps/office-manager-server/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  }
+}
