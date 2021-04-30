@@ -1,10 +1,9 @@
 import { Registration } from './registration.model';
 import { Field, ObjectType, HideField, ID } from '@nestjs/graphql';
-
 @ObjectType()
 export class User {
   @Field((type) => ID)
-  id: string;
+  id: number;
 
   @Field()
   email: string;
@@ -13,10 +12,11 @@ export class User {
   password: string;
 
   @Field()
-  firstname: string;
+  firstName: string;
 
   @Field()
-  lastname: string;
+  lastName: string;
 
-  posts: Registration[];
+  @Field((type) => [Registration])
+  registrations: Registration[];
 }

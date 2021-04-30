@@ -7,7 +7,8 @@ import { join } from 'path';
   imports: [
     GraphQLModule.forRoot({
       playground: true,
-      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+      autoSchemaFile: true,
+      // autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
     }),
     UserModule,
   ],

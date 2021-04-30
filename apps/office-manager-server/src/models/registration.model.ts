@@ -11,7 +11,4 @@ export class Registration {
 
   @Field()
   createdAt: Date;
-
-  @Field()
-  user: User;
 }
